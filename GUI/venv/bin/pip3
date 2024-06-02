@@ -1,4 +1,6 @@
-#!/Users/utkarshnandy/UC_DAVIS/SQ24/ECS171/GUI/venv/bin/python3.12
+#!/bin/sh
+'''exec' "/Users/apple/Documents/SPRING'24/ECS 171/final project/BreastCancerClassifier/GUI/venv/bin/python3.11" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys

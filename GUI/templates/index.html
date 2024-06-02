@@ -4,17 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Forest Classifier</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url('static/image.jpg'); /* Replace 'path_to_your_image.jpg' with the path to your image */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+        .container {
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.86); /* Add opacity to make content readable */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 0;
+        }
+        form {
+            margin-top: 20px; /* Adjust as needed */
+        }
+        label {
+            display: block;
+            margin:auto;
+            width: 50%;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        input[type="file"] {
+            display: block;
+            width: 50%;
+            padding: 10px;
+            padding-right: 50px;
+            padding-left: 50px;
+            margin:auto;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #f5a6bc;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Random Forest Classifier</h1>
-    <form action="/predict" method="post">
-        <!-- Replace these input fields with the actual features your model expects -->
-        <label for="feature1">Feature 1:</label>
-        <input type="text" id="feature1" name="feature1"><br><br>
-        <label for="feature2">Feature 2:</label>
-        <input type="text" id="feature2" name="feature2"><br><br>
-        <!-- Add more input fields as necessary -->
-        <input type="submit" value="Predict">
-    </form>
+    <div class="container">
+        <h1>Random Forest Classifier</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <!-- Replace the input fields with a file input field -->
+            <label for="file">Upload Breast Cancer Data:</label>
+            <input type="file" id="file" name="file">
+            <!-- Add more input fields as necessary -->
+            <input type="submit" value="Upload">
+        </form>
+    </div>
 </body>
 </html>
