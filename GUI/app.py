@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify, render_template
-import model
+# import model
 import csv
 import json
+# import ydf 
 
 app = Flask(__name__)
-model = ydf.load_model("/tmp/my_ydf_model")
+# model = ydf.load_model("model")
 
 @app.route('/')
 def home():
