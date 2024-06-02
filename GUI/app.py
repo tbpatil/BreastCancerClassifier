@@ -1,11 +1,12 @@
 from flask import Flask, request, jsonify, render_template
-# import model
+import model
 import csv
 import json
-# import ydf 
+import ydf 
+import pandas as pd
 
 app = Flask(__name__)
-# model = ydf.load_model("model")
+model = ydf.load_model("GUI\model")
 
 @app.route('/')
 def home():
@@ -15,10 +16,10 @@ def home():
 def predict():
     # Check if a file was uploaded
     uploaded_file = request.files['file']
-    if '.csv' in uploaded_file.filename :
+    if '.csv'     in uploaded_file.filename :
         # parse into dictionary if csv
-        uploaded_file.save('static/data.csv')
-        with open('static/data.csv', 'r' ) as file:
+        uploaded_file.save('GUI\static\data.csv')
+        with open('GUI\static\data.csv', 'r' ) as file:
         
         
             csv_reader = csv.DictReader(file)
@@ -31,7 +32,14 @@ def predict():
                 
         # extension = uploaded_file.filename.split('.')[1]
         # print(extension)
-        return "File uploaded successfully. Prediction result will be shown here."
+        newData=pd.DataFrame(data)
+        predicition=model.predict(newData)
+        print(predicition[0])
+        if predicition[0]==1.0:
+            return "M"
+        else:
+            return "B"
+        return int (predicition[0])
     # if 'file' in request.files:
     #     #uploaded_file = request.files['file']
     #     print(uploaded_file.filename )
@@ -40,6 +48,7 @@ def predict():
     #     # prediction = model.predict_from_file(uploaded_file)
     #     # return jsonify({'prediction': prediction})
     #     return "File uploaded successfully. Prediction result will be shown here."
+
     else:
         # If no file was uploaded, handle form data as before
         print("BLAH")

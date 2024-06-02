@@ -1,2 +1,2 @@
-Size,Malignant
-2,0
+texture1,smoothness1,compactness1,concavity1,concave_points1,symmetry1,fractal_dimension1,texture2,smoothness2,compactness2,concavity2,concave_points2,symmetry2,fractal_dimension2,texture3,smoothness3,compactness3,concavity3,concave_points3,symmetry3,fractal_dimension3,Diagnosis
+21.53,0.1054,0.1868,0.1425,0.08783,0.2252,0.06924,0.9832,0.004452,0.03055,0.02681,0.01352,0.01454,0.003711,33.21,0.1525,0.6643,0.5539,0.2701,0.4264,0.1275,0
