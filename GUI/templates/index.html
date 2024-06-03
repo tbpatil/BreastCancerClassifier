@@ -6,7 +6,7 @@
     <title>Random Forest Classifier</title>
     <style>
         body {
-            font-family: 'Times New Roman', Times, serif;
+            font-family: Arial, Helvetica, sans-serif;
             background-image: url('static/image.jpg'); /* Replace 'path_to_your_image.jpg' with the path to your image */
             margin: 0;
             padding: 0;
@@ -26,29 +26,49 @@
             color: #333;
             text-align: center;
             margin-top: 0;
+            margin-bottom: 7.5px;
         }
         form {
-            margin-top: 20px; /* Adjust as needed */
+            /* margin-top: none; Adjust as needed */
+            margin: none;
         }
         label {
             display: block;
             margin:auto;
+            text-align: center;
             width: 50%;
             font-size: 18px;
             margin-bottom: 10px;
             color: #555;
         }
-        input[type="file"] {
+        input[type="file"]{
             display: block;
             width: 50%;
-            padding: 10px;
-            padding-right: 50px;
-            padding-left: 50px;
-            margin:auto;
-            font-size: 16px;
+            padding: 0.5em;
+            padding-right: auto;
+            padding-left: auto;
+            margin: auto;
+            font-size: 14px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 3px;
+            align-items: center;
+            border: thin solid grey;
+            text-align: center;
+            position: relative;
+            /* text-indent: 100px; */
+            /* color: transparent */
+        }
+        input[type="file"]::file-selector-button {
+            font-weight: bold;
+            color: #F386A5;
+            padding: 0.5em;
+            border: thin solid grey;
+            border-radius: 3px;
+        }
+        input[type="file"]::file-selector-button:hover {
+            background-color: #81ecec;
+            border: 1px solid #00cec9;
         }
         input[type="submit"] {
             background-color: #f5a6bc;
@@ -61,7 +81,10 @@
             width: 100%;
         }
         input[type="submit"]:hover {
-            background-color: #45a049;
+            /* background-color: #45a049; */
+            /* background:#000; */
+            color: #fff;
+            opacity:0.7;
         }
     </style>
 </head>
@@ -70,8 +93,8 @@
         <h1>Random Forest Classifier</h1>
         <form action="/predict" method="post" enctype="multipart/form-data">
             <!-- Replace the input fields with a file input field -->
-            <label for="file">Upload Breast Cancer Data:</label>
-            <input type="file" id="file" name="file">
+            <label for="file"> Upload Tumor Data </label>
+            <input type="file" title=".csv or .json only"/>
             <!-- Add more input fields as necessary -->
             <input type="submit" value="Upload">
         </form>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Forest Classifier</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url('static/image.jpg'); 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+        .container {
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.86); /* Add opacity to make content readable */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 7.5px;
+        }
+        h2 {
+            color: rgb(199, 21, 21);
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 7.5px;
+        }
+        form {
+            /* margin-top: none; Adjust as needed */
+            margin: none;
+        }
+        label {
+            display: block;
+            margin:auto;
+            text-align: center;
+            width: 50%;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Forest Classifier</h1>
+        <h2>Malignant!</h2>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+        </form>
+    </div>
+</body>
+</html>

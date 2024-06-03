@@ -36,9 +36,9 @@ def predict():
         predicition=model.predict(newData)
         print(predicition[0])
         if predicition[0]==1.0:
-            return "M"
+            return render_template('malignant.html')
         else:
-            return "B"
+            return render_template('benign.html')
         return int (predicition[0])
     # if 'file' in request.files:
     #     #uploaded_file = request.files['file']
