@@ -47,9 +47,11 @@
             padding: 0.5em;
             padding-right: auto;
             padding-left: auto;
-            margin: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 15px;
             font-size: 14px;
-            margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 3px;
             align-items: center;
@@ -79,6 +81,7 @@
             cursor: pointer;
             font-size: 16px;
             width: 100%;
+            margin: 0;
         }
         input[type="submit"]:hover {
             /* background-color: #45a049; */
@@ -86,18 +89,73 @@
             color: #fff;
             opacity:0.7;
         }
+        .info-btn {
+            cursor: pointer;
+            background-color: #f5a6bc;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            position: absolute;
+            top: 57px;
+            margin: 310px; 
+        }
+
+        .info-popup {
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            width: 300px;
+            z-index: 100;
+            left: 50%; /* Centering the popup */
+            transform: translateX(-50%);
+            top: 110px; /* Adjust based on your layout */
+            display: none; /* Hide initially */
+            top: 156px;
+            margin: 131px;
+        }
+        .info-popup::before {
+            content: "";
+            position: absolute;
+            top: 100%; /* Adjust this value to position the arrow right above the popup */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid white;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class=".info-btn">
+            <button type="button" id="info-btn" class="info-btn">?</button>
+        </div>
+        <div id="info-popup" class="info-popup" style="display: none;">
+            Ensure you upload a CSV or JSON file with the correct format. The file should include features like tumor size, age, etc.
+        </div>
         <h1>Random Forest Classifier</h1>
         <form action="/predict" method="post" enctype="multipart/form-data">
             <!-- Replace the input fields with a file input field -->
-            <label for="file"> Upload Tumor Data </label>
-            <input type="file" title=".csv or .json only"/>
-            <!-- Add more input fields as necessary -->
+            <label for="file">Upload Tumor Data</label>
+            <input type="file" id="file" title=".csv or .json only">
             <input type="submit" value="Upload">
+            <!-- Add more input fields as necessary -->
         </form>
     </div>
+    <script>
+        document.getElementById('info-btn').onclick = function() {
+            var popup = document.getElementById('info-popup');
+            popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
+        };
+    </script>
 </body>
 </html>
