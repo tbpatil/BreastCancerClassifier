@@ -1,0 +1,26 @@
+[
+    {
+        "texture1": "21.53",
+        "smoothness1": "0.1054",
+        "compactness1": "0.1868",
+        "concavity1": "0.1425",
+        "concave_points1": "0.08783",
+        "symmetry1": "0.2252",
+        "fractal_dimension1": "0.06924",
+        "texture2": "0.9832",
+        "smoothness2": "0.004452",
+        "compactness2": "0.03055",
+        "concavity2": "0.02681",
+        "concave_points2": "0.01352",
+        "symmetry2": "0.01454",
+        "fractal_dimension2": "0.003711",
+        "texture3": "33.21",
+        "smoothness3": "0.1525",
+        "compactness3": "0.6643",
+        "concavity3": "0.5539",
+        "concave_points3": "0.2701",
+        "symmetry3": "0.4264",
+        "fractal_dimension3": "0.1275",
+        "Diagnosis": "0"
+    }
+]
