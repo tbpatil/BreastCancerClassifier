@@ -2,11 +2,11 @@ from flask import Flask, request, jsonify, render_template
 import model
 import csv
 import json
-import ydf 
-import pandas as pd
+# import ydf 
+# import pandas as pd
 
 app = Flask(__name__)
-model = ydf.load_model("GUI\model")
+# model = ydf.load_model("GUI\model")
 
 @app.route('/')
 def home():
